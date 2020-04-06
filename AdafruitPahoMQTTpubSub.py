@@ -18,7 +18,7 @@ totalTime = 0
 
 
 def on_connect(client, userdata, flags, rc):
-"""Upon connection, subscribe to the path and call publishValue"""
+    """Upon connection, subscribe to the path and call publishValue"""
 
     print(f'Connected to {broker} with result code {rc}')
     print(f'Subscribing to topic: {path}\n')
@@ -27,12 +27,12 @@ def on_connect(client, userdata, flags, rc):
 
 
 def on_disconnect(client, userdata, rc):
-"""Notify the user that the connection has been closed"""
+    """Notify the user that the connection has been closed"""
 
     print(f'Disconnected from {broker} with result code {rc}')
 
 def on_message(client, userdata, message):
-"""Display received messages and transaction time, call publishValue"""
+    """Display received messages and transaction time, call publishValue"""
 
     endTime = time.time()
     global totalTime
@@ -45,7 +45,7 @@ def on_message(client, userdata, message):
     publishValue()
 
 def publishValue():
-"""Get input values from user text entry"""
+    """Get input values from user text entry"""
 
     global startTime
     global messageCount
